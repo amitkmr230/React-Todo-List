@@ -23,7 +23,10 @@ class App extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
+    if(this.state.item === "") {
+      return false
+    }
     const newItem = {
       id: uuidv4(),
       item: this.state.item
